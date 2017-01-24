@@ -1,0 +1,11 @@
+<library path="lib/libdata_logger">
+
+  <class name="data_logger/DataLogger"
+         type="data_logger::DatalogPanel"
+         base_class_type="rviz::Panel">
+    <description>
+      Datalogging helper.
+    </description>
+  </class>
+
+</library>

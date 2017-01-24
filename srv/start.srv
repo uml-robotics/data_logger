@@ -1,0 +1,4 @@
+string bag_path
+string rosbag_args
+---
+string out

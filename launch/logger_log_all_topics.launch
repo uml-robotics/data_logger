@@ -1,0 +1,7 @@
+<!--Shortcut to record all topics. The resulting file could be very large-->
+<launch>
+  <node pkg="data_logger" name="data_logger" type="data_logger_node" output="screen">
+    <param name="rosbag_record_args" value="--all --output-prefix=all"/>
+    <param name="bag_path" value="$(env HOME)/bag"/>
+  </node>
+</launch>

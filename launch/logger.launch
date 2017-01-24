@@ -1,0 +1,25 @@
+<!--SAMPLE LAUNCH-->
+<launch>
+
+
+  <!--THROTTLING-->
+  <!--<node pkg="topic_tools" name="hatcamera_throttle" type="throttle" output="screen"-->
+    <!--args="messages /camera/rgb/image_color/compressed 1.0 /camera/rgb/image_color/compressed/throttle"/>-->
+
+  <!--RECORDING-->
+  <node pkg="data_logger" name="data_logger" type="data_logger_node" output="screen">
+    <!--See the 'rosbag record' manual for parameter description-->
+    <param name="rosbag_record_args"
+      value="--output-prefix=test
+      /cmd_vel 
+      /map
+      /amcl_pose
+      /initialpose
+      /camera/rgb/image_color/compressed/throttle
+      /scan
+      /tf
+      /rosout_agg
+      /rosout"/>
+    <param name="bag_path" value="$(env HOME)/bag"/>
+  </node>
+</launch>
