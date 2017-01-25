@@ -7,7 +7,7 @@
 #include <std_srvs/Empty.h>
 
 #include <data_logger/status_publisher.h>
-
+#include "data_logger/start.h"
 
 namespace data_logger
 {
@@ -22,9 +22,10 @@ private:
   ros::NodeHandle nh_;
   ros::ServiceServer srv_start_;
   ros::ServiceServer srv_stop_;
-  bool start(std_srvs::EmptyRequest &req, std_srvs::EmptyResponse &res);
+  bool start(data_logger::start::Request &req, data_logger::start::Response &res);
   bool stop(std_srvs::EmptyRequest &req, std_srvs::EmptyResponse &res);
-
+ 
+  int pipefd[2];
   pid_t bag_process_pid_;
   std::string rosbag_record_args_;
   std::string bag_path_;
