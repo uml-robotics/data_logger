@@ -1,0 +1,4 @@
+ROS Data Logging Node
+=====================
+
+This node can be used to log all topics, or a subset of topics, in a ROS system to a bag file at a designated path. Logging can be started and stopped through the use of service calls, as well as through the provided GUI. Build using catkin.
